@@ -777,7 +777,9 @@ function _drupalorg_testing_create_project_terms($args, &$context) {
   }
 
   // Add release versions.
-  $release_vid = _project_release_get_api_vid();
+  $release_api_vid = install_taxonomy_add_vocabulary(t('Project Release API Compatibility'), array('project_release' => 'project_release'), array('multiple' => FALSE));
+  variable_set('project_release_api_vocabulary', $release_api_vid);
+
   $terms = array(
     '4.0.x', '4.1.x', '4.2.x', '4.3.x',
     '4.4.x', '4.5.x', '4.6.x', '4.7.x', '5.x', '6.x', '7.x',
@@ -786,7 +788,7 @@ function _drupalorg_testing_create_project_terms($args, &$context) {
   // For releases to be properly ordered in the download tables, the oldest taxonomy
   // terms must have the heaviest weights.
   foreach ($terms as $name) {
-    install_taxonomy_add_term($release_vid, $name, '', array('weight' => $weight));
+    install_taxonomy_add_term($release_api_vid, $name, '', array('weight' => $weight));
     $weight--;
     $context['results'][] = t('Created release version %term.', array('%term' => $name));
   }
