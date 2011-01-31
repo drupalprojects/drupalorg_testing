@@ -150,6 +150,3 @@ projects[install_profile_api][download][type] = "cvs"
 projects[install_profile_api][download][module] = "contributions/modules/install_profile_api"
 projects[install_profile_api][download][revision] = "DRUPAL-6--2"
 
-projects[simpletest][download][type] = "cvs"
-projects[simpletest][download][module] = "contributions/modules/simpletest"
-projects[simpletest][download][revision] = "DRUPAL-6--2"

@@ -83,9 +83,6 @@ function drupalorg_testing_profile_modules() {
     // Repo auth related modules
     // 'beanstalkd', // beanstalkd is crashing site
     'sshkey', 'project_git_auth', 'drupal_queue',
-    // Extra modules
-    'simpletest',
-    
   );
 }
 
