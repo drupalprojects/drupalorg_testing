@@ -1,5 +1,4 @@
 <?php
-
 // $Id$
 
 /**
@@ -872,6 +871,10 @@ function _drupalorg_testing_create_content($args, &$context) {
  * Configures variables for project* modules.
  */
 function _drupalorg_testing_configure_project_settings($args, &$context) {
+  // Set sandbox projects to auto-generate project names, and disallow releases.
+  variable_set('project_sandbox_numeric_shortname', TRUE);
+  variable_set('project_release_sandbox_allow_release, FALSE);
+
   // TODO: there's currently so default sort method for
   // projects in 6.x, so fix this when it appears.
 
