@@ -94,7 +94,7 @@ projects[project][download][revision] = "HEAD"
 
 projects[project_git_instructions][download][type] = "cvs"
 projects[project_git_instructions][download][module] = "contributions/modules/project_git_instructions"
-projects[project_git_instructions][download][revision] = "DRUPAL-6--1"
+projects[project_git_instructions][download][revision] = "HEAD"
 
 projects[project_issue][download][type] = "cvs"
 projects[project_issue][download][module] = "contributions/modules/project_issue"

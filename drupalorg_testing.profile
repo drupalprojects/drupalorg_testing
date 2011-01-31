@@ -67,22 +67,26 @@ define('D_O_ROLE_SWITCH', 8);
 
 function drupalorg_testing_profile_modules() {
   return array(
-    // core, required
+    // Core, required.
     'block', 'filter', 'node', 'system', 'user',
-    // core, optional as per http://drupal.org/node/27367
+    // Core, optional.
     'taxonomy',  // NOTE: taxonomy needs to be first in the list or other modules bomb.
     'aggregator', 'book', 'comment', 'contact', 'dblog', 'forum', 'help',
     'path', 'profile', 'menu', 'search', 'statistics',
     'tracker', 'upload',
-    // contrib modules
-    'install_profile_api',
-    'codefilter', 'cvs', 'devel', 'project', 'project_issue', 'project_release',
-    'comment_upload', 'comment_alter_taxonomy', 'views', 'views_ui', 'ctools',
-    // VC modules
-    'autoload', 'dbtng', 'versioncontrol', 'versioncontrol_git',
-    // Repo auth related modules
+    // Contrib modules - enable these first to prevent errors.
+    'install_profile_api', 'views',
+    // Contrib modules - and now the rest.
+    'codefilter', 'devel', 'project', 'project_issue', 'project_release',
+    'comment_upload', 'comment_alter_taxonomy', 'views_ui', 'ctools',
+    // Version Control-related modules.
+    'autoload', 'dbtng', 'versioncontrol', 'versioncontrol_git', 'versioncontrol_project',
+    'project_git_instructions',
+    // Repository authentication-related modules.
     // 'beanstalkd', // beanstalkd is crashing site
-    'sshkey', 'project_git_auth', 'drupal_queue',
+    'sshkey', 'multiple_email', 'versioncontrol_git_repo_manager', 'drupal_queue', 'waiting_queue',
+    // Custom modules.
+    'drupalorg', 'drupalorg_git_gateway', 'drupalorg_project', // 'drupalorg_versioncontrol',
   );
 }
 
@@ -157,7 +161,6 @@ function _drupalorg_testing_set_batch(&$task, $url) {
       array('_drupalorg_testing_batch_dispatch', array('_drupalorg_testing_create_roles', array())),
       array('_drupalorg_testing_batch_dispatch', array('_drupalorg_testing_create_users', array())),
       array('_drupalorg_testing_batch_dispatch', array('_drupalorg_testing_configure_devel_module', array())),
-      array('_drupalorg_testing_batch_dispatch', array('_drupalorg_testing_configure_cvs_module', array())),
       array('_drupalorg_testing_batch_dispatch', array('_drupalorg_testing_create_project_terms', array())),
       array('_drupalorg_testing_batch_dispatch', array('_drupalorg_testing_configure_issue_tags', array())),
       array('_drupalorg_testing_batch_dispatch', array('_drupalorg_testing_configure_project_settings', array())),
@@ -366,6 +369,7 @@ function _drupalorg_testing_configure_devel_module($args, &$context) {
   $context['message'] = t('Configured devel module');
 }
 
+/*
 function _drupalorg_testing_configure_cvs_module($args, &$context) {
   $repos = array(
     'drupal' => array(
@@ -407,6 +411,7 @@ function _drupalorg_testing_configure_cvs_module($args, &$context) {
   $context['results'][] = t('Configured CVS settings.');
   $context['message'] = t('Configured CVS module');
 }
+*/
 
 /**
  * Setup roles and permissions to mimic drupal.org.
