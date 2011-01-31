@@ -784,7 +784,8 @@ function _drupalorg_testing_create_project_terms($args, &$context) {
   }
 
   // Add release versions.
-  $release_vid = _project_release_get_api_vid();
+  $release_api_vid = install_taxonomy_add_vocabulary(t('Project Release API Compatibility'), array('project_release' => 'project_release'), array('multiple' => FALSE));
+  variable_set('project_release_api_vocabulary', $release_api_vid);
   $terms = array(
     '4.0.x', '4.1.x', '4.2.x', '4.3.x',
     '4.4.x', '4.5.x', '4.6.x', '4.7.x', '5.x', '6.x', '7.x',
@@ -873,7 +874,7 @@ function _drupalorg_testing_create_content($args, &$context) {
 function _drupalorg_testing_configure_project_settings($args, &$context) {
   // Set sandbox projects to auto-generate project names, and disallow releases.
   variable_set('project_sandbox_numeric_shortname', TRUE);
-  variable_set('project_release_sandbox_allow_release, FALSE);
+  variable_set('project_release_sandbox_allow_release', FALSE);
 
   // TODO: there's currently so default sort method for
   // projects in 6.x, so fix this when it appears.
