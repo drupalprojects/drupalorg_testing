@@ -1,14 +1,14 @@
 ; $Id$
 api = 2
 core = 6.x
-projects[] = drupal
 
-; Profile.
+; Core.
 
-projects[drupalorg_testing][type] = "profile"
-projects[drupalorg_testing][download][type] = "cvs"
-projects[drupalorg_testing][download][module] = "contributions/profiles/drupalorg_testing"
-projects[drupalorg_testing][download][revision] = "HEAD"
+projects[drupal][type] = "core"
+projects[drupal][download][type] = "cvs"
+projects[drupal][download][root] = ":pserver:anonymous:anonymous@cvs.drupal.org:/cvs/drupal"
+projects[drupal][download][revision] = "DRUPAL-6"
+projects[drupal][download][module] = "drupal"
 
 ; Modules.
 
