@@ -9,6 +9,8 @@ projects[drupal][download][type] = "cvs"
 projects[drupal][download][root] = ":pserver:anonymous:anonymous@cvs.drupal.org:/cvs/drupal"
 projects[drupal][download][revision] = "DRUPAL-6"
 projects[drupal][download][module] = "drupal"
+; Patch required in order for SimpleTest to work.
+projects[drupal][patch][] = "http://git.drupalcode.org/project/simpletest.git/blob_plain/refs/heads/6.x-2.x:/D6-core-simpletest.patch"
 
 ; Drupal.org modules.
 

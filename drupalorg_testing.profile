@@ -69,24 +69,32 @@ function drupalorg_testing_profile_modules() {
   return array(
     // Core, required.
     'block', 'filter', 'node', 'system', 'user',
+
     // Core, optional.
     'taxonomy',  // NOTE: taxonomy needs to be first in the list or other modules bomb.
     'aggregator', 'book', 'comment', 'contact', 'dblog', 'forum', 'help',
     'path', 'profile', 'menu', 'search', 'statistics',
     'tracker', 'upload',
+
     // Contrib modules - enable these first to prevent errors.
     'install_profile_api', 'views',
+
     // Contrib modules - and now the rest.
     'codefilter', 'devel', 'project', 'project_issue', 'project_release',
     'comment_upload', 'comment_alter_taxonomy', 'views_ui', 'ctools',
+
     // Version Control-related modules.
     'autoload', 'dbtng', 'versioncontrol', 'versioncontrol_git', 'versioncontrol_project',
     'project_git_instructions',
+
     // Repository authentication-related modules.
-    // 'beanstalkd', // beanstalkd is crashing site
     'sshkey', 'multiple_email', 'versioncontrol_git_repo_manager', 'drupal_queue', 'waiting_queue',
+
     // Custom modules.
-    'drupalorg', 'drupalorg_git_gateway', 'drupalorg_project', // 'drupalorg_versioncontrol',
+    'drupalorg', 'drupalorg_git_gateway', 'drupalorg_project',
+
+    // @todo Problematic modules.
+    //'simpletest', 'beanstalkd', 'drupalorg_versioncontrol',
   );
 }
 
