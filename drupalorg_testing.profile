@@ -80,7 +80,7 @@ function drupalorg_testing_profile_modules() {
     'install_profile_api', 'views',
 
     // Contrib modules - and now the rest.
-    'codefilter', 'devel', 'project', 'project_issue', 'project_release',
+    'codefilter', 'devel', 'project', 'project_issue', 'project_release', 'project_usage',
     'comment_upload', 'comment_alter_taxonomy', 'views_ui', 'ctools',
 
     // Version Control-related modules.
