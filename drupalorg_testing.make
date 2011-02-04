@@ -152,3 +152,9 @@ projects[install_profile_api][download][type] = "cvs"
 projects[install_profile_api][download][module] = "contributions/modules/install_profile_api"
 projects[install_profile_api][download][revision] = "DRUPAL-6--2"
 
+
+; External Libraries
+libraries[jquery_ui][download][type] = "file"
+libraries[jquery_ui][download][url] = "http://jquery-ui.googlecode.com/files/jquery.ui-1.6.zip"
+libraries[jquery_ui][download][md5] = "c177d38bc7af59d696b2efd7dda5c605"
+libraries[jquery_ui][destination] = "modules/jquery_ui"
