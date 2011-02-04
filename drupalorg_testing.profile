@@ -81,7 +81,7 @@ function drupalorg_testing_profile_modules() {
 
     // Contrib modules - and now the rest.
     'codefilter', 'devel', 'project', 'project_issue', 'project_release', 'project_usage',
-    'comment_upload', 'comment_alter_taxonomy', 'views_ui', 'ctools',
+    'comment_upload', 'comment_alter_taxonomy', 'views_ui', 'ctools', 'jquery_ui',
 
     // Version Control-related modules.
     'autoload', 'dbtng', 'versioncontrol', 'versioncontrol_git', 'versioncontrol_project',
