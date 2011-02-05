@@ -454,10 +454,10 @@ function _drupalorg_testing_create_roles($args, &$context) {
       'access comments',
       // comment_upload module
       'view files uploaded to comments',
+      // commitlog
+      'access commit messages',
       // contact
       'access site-wide contact form',
-      // cvs
-      'access CVS messages',
       // node
       'access content',
       // project
@@ -489,22 +489,28 @@ function _drupalorg_testing_create_roles($args, &$context) {
       // comment_upload module
       'upload files to comments',
       'view files uploaded to comments',
+      // commitlog
+      'access commit messages',
       // contact
       'access site-wide contact form',
-      // cvs
-      'access CVS messages',
       // forum
       'create forum topics',
       'edit own forum topics',
+      // html5_user_geolocation
+      'allow location to be stored',
+      // multiple_email
+      'use multiple emails',
       // node
       'access content',
       'create book content',
       'edit any book content',
+      'edit own book content',
       'view revisions',
+      // pift
+      'pift re-test files',
       // project
       'access projects',
       'browse project listings',
-      'maintain projects',
       // project_issue module
       'access project issues',
       'create project issues',
@@ -525,6 +531,9 @@ function _drupalorg_testing_create_roles($args, &$context) {
       // search
       'search content',
       'use advanced search',
+      // sshkey
+      'manage own SSH public keys',
+      'view own SSH public keys',
       // upload
       'view uploaded files',
       'upload files',
