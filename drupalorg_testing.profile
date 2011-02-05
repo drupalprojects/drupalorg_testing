@@ -54,11 +54,15 @@ define('D_O_NUM_CVS_USERS_PER_ROLE', 1);
 define('D_O_ROLE_ANONYMOUS', 1);
 define('D_O_ROLE_AUTHENTICATED', 2);
 define('D_O_ROLE_ADMINISTRATOR', 3);
-define('D_O_ROLE_CVS_ADMIN', 4);
 define('D_O_ROLE_DOC_MAINTAINER', 5);
 define('D_O_ROLE_SITE_MAINTAINER', 6);
 define('D_O_ROLE_USER_ADMIN', 7);
 define('D_O_ROLE_SWITCH', 8);
+
+// Git roles.
+define('D_O_ROLE_GIT_USER', 20);
+define('D_O_ROLE_GIT_ADMIN', 22);
+define('D_O_ROLE_GIT_VETTED', 24);
 
 
 //----------------------------------------
@@ -81,7 +85,7 @@ function drupalorg_testing_profile_modules() {
 
     // Contrib modules - and now the rest.
     'codefilter', 'devel', 'project', 'project_issue', 'project_release', 'project_usage',
-    'comment_upload', 'comment_alter_taxonomy', 'views_ui', 'ctools', 'jquery_ui',
+    'comment_upload', 'comment_alter_taxonomy', 'views_ui', 'ctools', 'jquery_ui', 'homebox',
 
     // Version Control-related modules.
     'autoload', 'dbtng', 'versioncontrol', 'versioncontrol_git', 'versioncontrol_project',
@@ -432,11 +436,13 @@ function _drupalorg_testing_create_roles($args, &$context) {
     D_O_ROLE_ANONYMOUS => 'anonymous',
     D_O_ROLE_AUTHENTICATED => 'authenticated',
     D_O_ROLE_ADMINISTRATOR => 'administrator',
-    D_O_ROLE_CVS_ADMIN => 'CVS administrator',
     D_O_ROLE_DOC_MAINTAINER => 'documentation maintainer',
     D_O_ROLE_SITE_MAINTAINER => 'site maintainer',
     D_O_ROLE_USER_ADMIN => 'user administrator',
     D_O_ROLE_SWITCH => 'user switcher',
+    D_O_ROLE_GIT_USER => 'Git user',
+    D_O_ROLE_GIT_ADMIN => 'Git administrator',
+    D_O_ROLE_GIT_VETTED => 'Git vetted user',
   );
 
   // Define permissions for each role ID.
@@ -608,14 +614,6 @@ function _drupalorg_testing_create_roles($args, &$context) {
       // views module
       'administer views',
     ),
-    D_O_ROLE_CVS_ADMIN => array(
-      // cvs
-      'administer CVS',
-      // project
-      'administer projects',
-      // system
-      'access administration pages',
-    ),
     D_O_ROLE_DOC_MAINTAINER => array(
       // book
       'add content to books',
@@ -653,6 +651,37 @@ function _drupalorg_testing_create_roles($args, &$context) {
       'switch users',
       'access devel information',
     ),
+    D_O_ROLE_GIT_USER => array(
+      // googleanalytics
+      'opt-in or out of tracking',
+      // image
+      'create images',
+      'edit own images',
+      // pift
+      'pift re-test files',
+      // poject module
+      'create sandbox projects',
+      // versioncontrol api
+      'use version control systems',
+    ),
+    D_O_ROLE_GIT_ADMIN => array(
+      // contact
+      'access site-wide contact form',
+      // googleanalytics
+      'opt-in or out of tracking',
+      // poject module
+      'administer projects',
+      'create full projects',
+      // system
+      'access administration pages',
+      'access site reports',
+      // versioncontrol api
+      'administer version control systems',
+    ),
+    D_O_ROLE_GIT_VETTED => array(
+      // poject module
+      'create full projects',
+    ),
   );
 
   // Delete current roles and permissions and re-populate them.
@@ -679,7 +708,9 @@ function _drupalorg_testing_create_users($args, &$context) {
     'admin' => array(D_O_ROLE_ADMINISTRATOR),
     'site' => array(D_O_ROLE_SITE_MAINTAINER),
     'doc' => array(D_O_ROLE_DOC_MAINTAINER),
-    'cvs' => array(D_O_ROLE_CVS_ADMIN),
+    'git' => array(D_O_ROLE_GIT_USER),
+    'gitadmin' => array(D_O_ROLE_GIT_ADMIN),
+    'gitvetted' => array(D_O_ROLE_GIT_VETTED),
     'auth' => array(), // no extra roles
   );
 
