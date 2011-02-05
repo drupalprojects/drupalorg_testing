@@ -54,9 +54,15 @@ define('D_O_NUM_CVS_USERS_PER_ROLE', 1);
 define('D_O_ROLE_ANONYMOUS', 1);
 define('D_O_ROLE_AUTHENTICATED', 2);
 define('D_O_ROLE_ADMINISTRATOR', 3);
+define('D_O_ROLE_SITE_MAINTAINER', 4);
 define('D_O_ROLE_DOC_MAINTAINER', 5);
-define('D_O_ROLE_SITE_MAINTAINER', 6);
 define('D_O_ROLE_USER_ADMIN', 7);
+define('D_O_ROLE_LIST', 12);
+define('D_O_ROLE_TEST', 14);
+define('D_O_ROLE_REDESIGN', 16);
+define('D_O_ROLE_AD', 18);
+
+// Profile-only role to ease in testing.
 define('D_O_ROLE_SWITCH', 8);
 
 // Git roles.
@@ -85,7 +91,7 @@ function drupalorg_testing_profile_modules() {
 
     // Contrib modules - and now the rest.
     'codefilter', 'devel', 'project', 'project_issue', 'project_release', 'project_usage',
-    'comment_upload', 'comment_alter_taxonomy', 'views_ui', 'ctools', 'jquery_ui', 'homebox',
+    'comment_upload', 'comment_alter_taxonomy', 'views_ui', 'ctools', 'jquery_ui', 'homebox', 'cvs_deploy',
 
     // Version Control-related modules.
     'autoload', 'dbtng', 'versioncontrol', 'versioncontrol_git', 'versioncontrol_project',
@@ -436,10 +442,14 @@ function _drupalorg_testing_create_roles($args, &$context) {
     D_O_ROLE_ANONYMOUS => 'anonymous',
     D_O_ROLE_AUTHENTICATED => 'authenticated',
     D_O_ROLE_ADMINISTRATOR => 'administrator',
-    D_O_ROLE_DOC_MAINTAINER => 'documentation maintainer',
     D_O_ROLE_SITE_MAINTAINER => 'site maintainer',
+    D_O_ROLE_DOC_MAINTAINER => 'documentation maintainer',
     D_O_ROLE_USER_ADMIN => 'user administrator',
     D_O_ROLE_SWITCH => 'user switcher',
+    D_O_ROLE_LIST => 'list maintainer',
+    D_O_ROLE_TEST => 'testing administrator',
+    D_O_ROLE_REDESIGN => 'redesign user',
+    D_O_ROLE_AD => 'ad administrator',
     D_O_ROLE_GIT_USER => 'Git user',
     D_O_ROLE_GIT_ADMIN => 'Git administrator',
     D_O_ROLE_GIT_VETTED => 'Git vetted user',
@@ -560,9 +570,8 @@ function _drupalorg_testing_create_roles($args, &$context) {
       // contact module
       'access site-wide contact form',
       'administer site-wide contact form',
-      // cvs module
-      'access CVS messages',
-      'administer CVS',
+      // devel module
+      'access devel information',
       // filter module
       'administer filters',
       // forum module
@@ -572,6 +581,22 @@ function _drupalorg_testing_create_roles($args, &$context) {
       'delete own forum topics',
       'edit any forum topic',
       'edit own forum topics',
+      // googleanalytics module
+      'administer google analytics',
+      'opt-in or out of tracking',
+      // homebox module
+      'administer homebox',
+      // html5_user_geolocation module
+      'administer location storing',
+      'allow location to be stored',
+      // image module
+      'create images',
+      'edit own images',
+      'view original images',
+      // lists module
+      'post to newsletter',
+      // materialized_view module
+      'administer materialized views',
       // menu module
       'administer menu',
       // node module
@@ -598,12 +623,23 @@ function _drupalorg_testing_create_roles($args, &$context) {
       // path module
       'administer url aliases',
       'create url aliases',
+      // path redirect module
+      'administer redirects',
+      // pift module
+      'pift enable project testing',
+      'pift re-test files',
       // project module
       'administer projects',
       'browse project listings',
       'delete any projects',
+      // role_activity module
+      'view role activity',
       // search module
       'administer search',
+      // sshkey module
+      'administer SSH public keys',
+      'manage any SSH public keys',
+      'view any SSH public keys',
       // system module
       'access administration pages',
       'access site reports',
@@ -612,6 +648,8 @@ function _drupalorg_testing_create_roles($args, &$context) {
       'administer site configuration',
       // taxonomy module
       'administer taxonomy',
+      // tracker2 module
+      'administer tracker',
       // upload module',
       'upload files',
       'view uploaded files',
@@ -620,6 +658,8 @@ function _drupalorg_testing_create_roles($args, &$context) {
       'administer permissions',
       'administer users',
       'change own username',
+      // versioncontrol module
+      'administer version control systems',
       // views module
       'administer views',
     ),

@@ -152,6 +152,11 @@ projects[install_profile_api][download][type] = "cvs"
 projects[install_profile_api][download][module] = "contributions/modules/install_profile_api"
 projects[install_profile_api][download][revision] = "DRUPAL-6--2"
 
+projects[cvs_deploy][download][type] = "cvs"
+projects[cvs_deploy][download][module] = "contributions/modules/cvs_deploy"
+projects[cvs_deploy][download][revision] = "DRUPAL-6--1"
+
+
 ; External libraries.
 
 libraries[jquery_ui][download][type] = "file"
