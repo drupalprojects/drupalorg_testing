@@ -458,39 +458,39 @@ function _drupalorg_testing_create_roles($args, &$context) {
   // Define permissions for each role ID.
   $permissions = array(
     D_O_ROLE_ANONYMOUS => array(
-      // aggregator
+      // aggregator module
       'access news feeds',
-      // comment
+      // comment module
       'access comments',
       // comment_upload module
       'view files uploaded to comments',
-      // commitlog
+      // commitlog module
       'access commit messages',
-      // contact
+      // contact module
       'access site-wide contact form',
-      // node
+      // node module
       'access content',
-      // project
+      // project module
       'access projects',
-      // project_issue
+      // project_issue module
       'access project issues',
       // project_usage module
       'view project usage',
-      // search
+      // search module
       'search content',
       'use advanced search',
-      // upload
+      // upload module
       'view uploaded files',
-      // user
+      // user module
       'access user profiles',
     ),
     D_O_ROLE_AUTHENTICATED => array(
-      // aggregator
+      // aggregator module
       'access news feeds',
-      // book
+      // book module
       'access printer-friendly version',
       'add content to books',
-      // comment
+      // comment module
       'access comments',
       'post comments',
       'post comments without approval',
@@ -499,35 +499,37 @@ function _drupalorg_testing_create_roles($args, &$context) {
       // comment_upload module
       'upload files to comments',
       'view files uploaded to comments',
-      // commitlog
+      // commitlog module
       'access commit messages',
-      // contact
+      // contact module
       'access site-wide contact form',
-      // forum
+      // forum module
       'create forum topics',
       'edit own forum topics',
-      // html5_user_geolocation
+      // html5_user_geolocation module
       'allow location to be stored',
-      // multiple_email
+      // multiple_email module
       'use multiple emails',
-      // node
+      // node module
       'access content',
       'create book content',
       'edit any book content',
       'edit own book content',
       'view revisions',
-      // pift
+      // pift module
       'pift re-test files',
-      // project
+      // project module
       'access projects',
       'browse project listings',
       // project_issue module
       'access project issues',
       'create project issues',
       'set issue status active',
-      'set issue status by design',
-      'set issue status closed',
-      'set issue status duplicate',
+      'set issue status closed (cannot reproduce)',
+      'set issue status closed (duplicate)',
+      'set issue status closed (fixed)',
+      'set issue status closed (wont fix)',
+      'set issue status closed (works as designed)',
       'set issue status fixed',
       'set issue status needs review',
       'set issue status needs work',
@@ -535,40 +537,32 @@ function _drupalorg_testing_create_roles($args, &$context) {
       'set issue status postponed',
       'set issue status postponed (maintainer needs more info)',
       'set issue status reviewed & tested by the community',
-      'set issue status wont fix',
       // project_usage module
       'view project usage',
-      // search
+      // search module
       'search content',
       'use advanced search',
-      // sshkey
+      // sshkey module
       'manage own SSH public keys',
       'view own SSH public keys',
-      // upload
+      // upload module
       'view uploaded files',
       'upload files',
-      // user
+      // user module
       'access user profiles',
       'change own username',
     ),
     D_O_ROLE_ADMINISTRATOR => array(
       // aggregator module
-      'access news feeds',
       'administer news feeds',
       // block module
       'administer blocks',
       // book module
-      'access printer-friendly version',
-      'add content to books',
       'administer book outlines',
       'create new books',
       // comment module
-      'access comments',
       'administer comments',
-      'post comments',
-      'post comments without approval',
       // contact module
-      'access site-wide contact form',
       'administer site-wide contact form',
       // devel module
       'access devel information',
@@ -576,11 +570,11 @@ function _drupalorg_testing_create_roles($args, &$context) {
       'administer filters',
       // forum module
       'administer forums',
-      'create forum topics',
       'delete any forum topic',
       'delete own forum topics',
       'edit any forum topic',
-      'edit own forum topics',
+      // google_admanager module
+      'administer google admanager',
       // googleanalytics module
       'administer google analytics',
       'opt-in or out of tracking',
@@ -588,7 +582,6 @@ function _drupalorg_testing_create_roles($args, &$context) {
       'administer homebox',
       // html5_user_geolocation module
       'administer location storing',
-      'allow location to be stored',
       // image module
       'create images',
       'edit own images',
@@ -600,10 +593,8 @@ function _drupalorg_testing_create_roles($args, &$context) {
       // menu module
       'administer menu',
       // node module
-      'access content',
       'administer content types',
       'administer nodes',
-      'create book content',
       'create page content',
       'create story content',
       'delete any book content',
@@ -615,11 +606,9 @@ function _drupalorg_testing_create_roles($args, &$context) {
       'edit any book content',
       'edit any page content',
       'edit any story content',
-      'edit own book content',
       'edit own page content',
       'edit own story content',
       'revert revisions',
-      'view revisions',
       // path module
       'administer url aliases',
       'create url aliases',
@@ -627,10 +616,8 @@ function _drupalorg_testing_create_roles($args, &$context) {
       'administer redirects',
       // pift module
       'pift enable project testing',
-      'pift re-test files',
       // project module
       'administer projects',
-      'browse project listings',
       'delete any projects',
       // role_activity module
       'view role activity',
@@ -650,81 +637,101 @@ function _drupalorg_testing_create_roles($args, &$context) {
       'administer taxonomy',
       // tracker2 module
       'administer tracker',
-      // upload module',
-      'upload files',
-      'view uploaded files',
       // user module
-      'access user profiles',
       'administer permissions',
       'administer users',
-      'change own username',
       // versioncontrol module
       'administer version control systems',
       // views module
       'administer views',
     ),
-    D_O_ROLE_DOC_MAINTAINER => array(
-      // book
-      'add content to books',
-      // node
-      'create book content',
-      'edit any book content',
-      'revert revisions',
-    ),
     D_O_ROLE_SITE_MAINTAINER => array(
-      // aggregator
+      // aggregator module
       'administer news feeds',
       // book module
       'administer book outlines',
       'create new books',
-      // comment
+      // comment module
       'administer comments',
-      // node
+      // googleanalytics module
+      'opt-in or out of tracking',
+      // image module
+      'create images',
+      // node module
       'administer nodes',
       'revert revisions',
-      // system
+      // system module
       'access administration pages',
       // taxonomy module
       'administer taxonomy',
-      // upload
-      'upload files',
+    ),
+    D_O_ROLE_DOC_MAINTAINER => array(
+      // googleanalytics module
+      'opt-in or out of tracking',
+      // node module
+      'revert revisions',
+      // path_redirect module
+      'administer redirects',
     ),
     D_O_ROLE_USER_ADMIN => array(
-      // system
+      // googleanalytics module
+      'opt-in or out of tracking',
+      // role_activity module
+      'view role activity',
+      // sshkey module
+      'manage any SSH public keys',
+      'view any SSH public keys',
+      // system module
       'access administration pages',
-      // user
+      // user module
       'administer users',
     ),
     D_O_ROLE_SWITCH => array(
-      // devel
+      // devel module
       'switch users',
       'access devel information',
     ),
-    D_O_ROLE_GIT_USER => array(
-      // googleanalytics
+    D_O_ROLE_LIST => array(
+      // googleanalytics module
       'opt-in or out of tracking',
-      // image
+      // lists module
+      'post to newsletter',
+    ),
+    D_O_ROLE_TEST => array(
+      // pift module
+      'pift enable project testing',
+    ),
+    D_O_ROLE_REDESIGN => array(
+      // project module
+      'assign and be assigned project issues',
+    ),
+    D_O_ROLE_AD => array(
+      // drupalorg module
+      'manage drupalorg ads',
+      // google_admanager module
+      'administer google admanager',
+    ),
+    D_O_ROLE_GIT_USER => array(
+      // googleanalytics module
+      'opt-in or out of tracking',
+      // image module
       'create images',
       'edit own images',
-      // pift
-      'pift re-test files',
       // poject module
       'create sandbox projects',
       // versioncontrol api
       'use version control systems',
     ),
     D_O_ROLE_GIT_ADMIN => array(
-      // contact
-      'access site-wide contact form',
-      // googleanalytics
+      // googleanalytics module
       'opt-in or out of tracking',
-      // poject module
+      // project module
       'administer projects',
       'create full projects',
-      // system
+      // system module
       'access administration pages',
       'access site reports',
-      // versioncontrol api
+      // versioncontrol module
       'administer version control systems',
     ),
     D_O_ROLE_GIT_VETTED => array(
