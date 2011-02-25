@@ -42,4 +42,3 @@ performs the following additional setup:
   project_issue, some random comments on those issues.
 
 
-$Id$
