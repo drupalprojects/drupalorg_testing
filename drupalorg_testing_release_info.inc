@@ -1,5 +1,4 @@
 <?php
-// $Id$
 
 // Generated with: drupalorg_testing_build_release_info.php
 // Generated on: Thu, 19 Mar 2009 15:28:26 -0400
