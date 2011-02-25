@@ -39,4 +39,3 @@ performs the following additional setup:
 * Creates a set of random issues and some random comments on those issues.
 
 
-$Id$
