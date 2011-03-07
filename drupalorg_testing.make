@@ -145,6 +145,10 @@ projects[git_deploy][download][type] = "git"
 projects[git_deploy][download][module] = "git_deploy"
 projects[git_deploy][download][revision] = "6.x-1.x"
 
+projects[libraries][download][type] = "git"
+projects[libraries][download][module] = "libraries"
+projects[libraries][download][revision] = "6.x-1.x"
+
 
 ; External libraries.
 
