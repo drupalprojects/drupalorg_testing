@@ -157,3 +157,10 @@ libraries[jquery_ui][download][url] = "http://jquery-ui.googlecode.com/files/jqu
 libraries[jquery_ui][download][md5] = "c177d38bc7af59d696b2efd7dda5c605"
 libraries[jquery_ui][directory_name] = "jquery.ui"
 libraries[jquery_ui][destination] = "modules/jquery_ui"
+
+libraries[glip][download][type] = "file"
+libraries[glip][download][url] = "https://github.com/halstead/glip/zipball/1.0"
+libraries[glip][download][md5] = "b1db4a043e69b7305336999623ebcb95"
+libraries[glip][directory_name] = "glip"
+libraries[glip][destination] = "sites/all/libraries"
+
