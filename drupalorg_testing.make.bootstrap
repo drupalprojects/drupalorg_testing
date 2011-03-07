@@ -1,0 +1,15 @@
+; Bootstrap .make file for the profile -- run this if don't have an existing
+; core installation to drop the profile into.
+
+api = 2
+core = 6.x
+
+projects[drupal][type] = "core"
+projects[drupal][download][type] = "git"
+projects[drupal][download][revision] = "6.x"
+projects[drupal][patch][] = "http://git.drupalcode.org/project/simpletest.git/blob_plain/refs/heads/6.x-2.x:/D6-core-simpletest.patch"
+
+projects[drupalorg_testing][type] = "profile"
+projects[drupalorg_testing][download][type] = "git"
+projects[drupalorg_testing][download][revision] = "master"
+
