@@ -86,11 +86,11 @@ function drupalorg_testing_profile_modules() {
     'tracker', 'upload',
 
     // Contrib modules - enable these first to prevent errors.
-    'install_profile_api', 'views',
+    'install_profile_api', 'views', 'libraries',
 
     // Contrib modules - and now the rest.
     'codefilter', 'devel', 'project', 'project_issue', 'project_release', 'project_usage',
-    'comment_upload', 'comment_alter_taxonomy', 'views_ui', 'ctools', 'jquery_ui', 'homebox', 'git_deploy', 'libraries',
+    'comment_upload', 'comment_alter_taxonomy', 'views_ui', 'ctools', 'jquery_ui', 'homebox', 'git_deploy',
 
     // Version Control-related modules.
     'autoload', 'dbtng', 'versioncontrol', 'versioncontrol_git', 'versioncontrol_project',
