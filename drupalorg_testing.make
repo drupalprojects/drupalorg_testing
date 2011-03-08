@@ -163,11 +163,11 @@ libraries[jquery_ui][directory_name] = "jquery.ui"
 ; files are not loaded for profile installation), we have to toss a copy there
 ; or the profile fails requirements checking.  Once the install completes,
 ; the library will be found in it's proper location, not here.
-libraries[jquery_ui][download][type] = "file"
-libraries[jquery_ui][download][url] = "http://jquery-ui.googlecode.com/files/jquery.ui-1.6.zip"
-libraries[jquery_ui][download][md5] = "c177d38bc7af59d696b2efd7dda5c605"
-libraries[jquery_ui][directory_name] = "jquery.ui"
-libraries[jquery_ui][destination] = "modules/jquery_ui"
+libraries[jquery_ui_2][download][type] = "file"
+libraries[jquery_ui_2][download][url] = "http://jquery-ui.googlecode.com/files/jquery.ui-1.6.zip"
+libraries[jquery_ui_2][download][md5] = "c177d38bc7af59d696b2efd7dda5c605"
+libraries[jquery_ui_2][directory_name] = "jquery.ui"
+libraries[jquery_ui_2][destination] = "modules/jquery_ui"
 
 libraries[glip][download][type] = "file"
 libraries[glip][download][url] = "https://github.com/halstead/glip/zipball/1.0"
