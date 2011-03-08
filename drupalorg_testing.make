@@ -162,5 +162,4 @@ libraries[glip][download][type] = "file"
 libraries[glip][download][url] = "https://github.com/halstead/glip/zipball/1.0"
 libraries[glip][download][md5] = "b1db4a043e69b7305336999623ebcb95"
 libraries[glip][directory_name] = "glip"
-libraries[glip][destination] = "sites/all/libraries"
 
