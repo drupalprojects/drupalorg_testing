@@ -127,6 +127,12 @@ function drupalorg_testing_form_alter(&$form, $form_state, $form_id) {
     $form['admin_account']['account']['name']['#default_value'] = D_O_USER1;
     $form['admin_account']['account']['mail']['#default_value'] = D_O_SITE_MAIL;
     $form['server_settings']['update_status_module']['#default_value'] = array();
+    // For some reason, the autoload registry needs to be rebuilt at this
+    // point, otherwise the DBTNG classes are not properly loaded and the
+    // installer craps out on the submission of the site configuration form.
+    // Yes, this is a hack, but livable since autoload will go away in 7.x.
+    // TODO: remove this in 7.x.
+    autoload_registry_rebuild();
   }
 }
 
