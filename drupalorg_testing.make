@@ -152,9 +152,9 @@ projects[libraries][download][revision] = "6.x-1.x"
 
 ; External libraries.
 
-libraries[jquery_ui][download][type] = "file"
-libraries[jquery_ui][download][url] = "http://jquery-ui.googlecode.com/files/jquery.ui-1.6.zip"
-libraries[jquery_ui][download][md5] = "c177d38bc7af59d696b2efd7dda5c605"
+libraries[jquery_ui][download][type] = "git"
+libraries[jquery_ui][download][url] = "https://github.com/jquery/jquery-ui"
+libraries[jquery_ui][download][tag] = "1.6"
 libraries[jquery_ui][directory_name] = "jquery.ui"
 
 ; This is very ugly, but because the discovery process of the jquery_ui
@@ -163,14 +163,14 @@ libraries[jquery_ui][directory_name] = "jquery.ui"
 ; files are not loaded for profile installation), we have to toss a copy there
 ; or the profile fails requirements checking.  Once the install completes,
 ; the library will be found in it's proper location, not here.
-libraries[jquery_ui_2][download][type] = "file"
-libraries[jquery_ui_2][download][url] = "http://jquery-ui.googlecode.com/files/jquery.ui-1.6.zip"
-libraries[jquery_ui_2][download][md5] = "c177d38bc7af59d696b2efd7dda5c605"
+libraries[jquery_ui_2][download][type] = "git"
+libraries[jquery_ui_2][download][url] = "https://github.com/jquery/jquery-ui"
+libraries[jquery_ui_2][download][tag] = "1.6"
 libraries[jquery_ui_2][directory_name] = "jquery.ui"
 libraries[jquery_ui_2][destination] = "modules/jquery_ui"
 
-libraries[glip][download][type] = "file"
-libraries[glip][download][url] = "https://github.com/halstead/glip/zipball/1.0"
-libraries[glip][download][md5] = "b1db4a043e69b7305336999623ebcb95"
+libraries[glip][download][type] = "git"
+libraries[glip][download][url] = "https://github.com/halstead/glip"
+libraries[glip][download][tag] = "1.0"
 libraries[glip][directory_name] = "glip"
 
