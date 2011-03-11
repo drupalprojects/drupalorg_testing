@@ -9,6 +9,7 @@ projects[drupal][download][type] = "git"
 projects[drupal][download][revision] = "6.x"
 projects[drupal][patch][] = "http://git.drupalcode.org/project/simpletest.git/blob_plain/refs/heads/6.x-2.x:/D6-core-simpletest.patch"
 
+; Run the makefile from the drupalorg_testing.make file in this profile.
 projects[drupalorg_testing][type] = "profile"
 projects[drupalorg_testing][download][type] = "git"
 projects[drupalorg_testing][download][revision] = "master"
