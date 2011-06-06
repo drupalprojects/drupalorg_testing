@@ -7,7 +7,13 @@ core = 6.x
 projects[drupal][type] = "core"
 projects[drupal][download][type] = "git"
 projects[drupal][download][revision] = "6.x"
+
+; Patch required to core for SimpleTest module.
 projects[drupal][patch][] = "http://git.drupalcode.org/project/simpletest.git/blob_plain/refs/heads/6.x-2.x:/D6-core-simpletest.patch"
+
+; Patch required to core to avoid fatal errors during install due to some modules
+; expecting a certain level of bootstrappiness in their .install files.
+projects[drupal][patch][] = "http://drupal.org/files/issues/drupal_get_filename-341140-48_p0-D6.patch"
 
 ; Run the makefile from the drupalorg_testing.make file in this profile.
 projects[drupalorg_testing][type] = "profile"
