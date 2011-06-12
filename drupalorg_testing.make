@@ -127,6 +127,11 @@ projects[views_field_view][download][type] = "git"
 projects[views_field_view][download][module] = "views_field_view"
 projects[views_field_view][download][revision] = "6.x-1.x"
 
+projects[views_litepager][download][type] = "git"
+projects[views_litepager][download][module] = "views_litepager"
+projects[views_litepager][download][revision] = "6.x-2.x"
+projects[views_litepager][patch][] = "http://drupal.org/files/issues/1072068-1.views_litepager_php_notices.patch"
+
 projects[waiting_queue][download][type] = "git"
 projects[waiting_queue][download][module] = "waiting_queue"
 projects[waiting_queue][download][revision] = "6.x-1.x"
