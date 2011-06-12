@@ -85,7 +85,7 @@ projects[project][download][revision] = "master"
 
 projects[project_git_instructions][download][type] = "git"
 projects[project_git_instructions][download][module] = "project_git_instructions"
-projects[project_git_instructions][download][revision] = "master"
+projects[project_git_instructions][download][revision] = "6.x-1.x"
 
 projects[project_issue][download][type] = "git"
 projects[project_issue][download][module] = "project_issue"
