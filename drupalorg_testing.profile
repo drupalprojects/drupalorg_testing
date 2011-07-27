@@ -100,7 +100,7 @@ function drupalorg_testing_profile_modules() {
     'sshkey', 'multiple_email', 'versioncontrol_git_repo_manager', 'drupal_queue', 'waiting_queue',
 
     // Custom modules.
-    'drupalorg', 'drupalorg_git_gateway', 'drupalorg_project',
+    'drupalorg', 'drupalorg_crosssite', 'drupalorg_git_gateway', 'drupalorg_project',
 
     // @todo Problematic modules.
     //'simpletest', 'beanstalkd', 'drupalorg_versioncontrol',
