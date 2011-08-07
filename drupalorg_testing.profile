@@ -79,6 +79,10 @@ function drupalorg_testing_profile_modules() {
     // Core, required.
     'block', 'filter', 'node', 'system', 'user',
 
+    // Next, views, so you don't get 100s of notices.
+    // @see http://drupal.org/node/334084.
+    'views',
+
     // Core, optional.
     'taxonomy',  // NOTE: taxonomy needs to be first in the list or other modules bomb.
     'aggregator', 'book', 'comment', 'contact', 'dblog', 'forum', 'help',
@@ -86,7 +90,7 @@ function drupalorg_testing_profile_modules() {
     'tracker', 'upload',
 
     // Contrib modules - enable these first to prevent errors.
-    'install_profile_api', 'views', 'libraries',
+    'install_profile_api', 'libraries',
 
     // Contrib modules - and now the rest.
     'codefilter', 'devel', 'project', 'project_issue', 'project_release', 'project_usage',
