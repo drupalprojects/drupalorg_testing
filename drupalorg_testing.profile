@@ -775,7 +775,7 @@ function _drupalorg_testing_create_users($args, &$context) {
     'doc' => array(D_O_ROLE_DOC_MAINTAINER),
     'git' => array(D_O_ROLE_GIT_USER),
     'gitadmin' => array(D_O_ROLE_GIT_ADMIN),
-    'gitvetted' => array(D_O_ROLE_GIT_VETTED),
+    'gitvetted' => array(D_O_ROLE_GIT_USER, D_O_ROLE_GIT_VETTED),
     'auth' => array(), // no extra roles
   );
 
@@ -901,7 +901,7 @@ function _drupalorg_testing_create_project_terms($args, &$context) {
   // For releases to be properly ordered in the download tables, the oldest taxonomy
   // terms must have the heaviest weights.
   foreach ($terms as $name) {
-    install_taxonomy_add_term($release_vid, $name, '', array('weight' => $weight));
+    install_taxonomy_add_term($release_api_vid, $name, '', array('weight' => $weight));
     $weight--;
     $context['results'][] = t('Created release version %term.', array('%term' => $name));
   }
@@ -913,9 +913,15 @@ function _drupalorg_testing_create_project_terms($args, &$context) {
     t('Bug fixes'),
     t('New features'),
   );
+  // This variable is a stop-gap until #642106 is implemented properly.
+  variable_set('project_release_release_type_vid', $release_type_vid);
 
   foreach ($terms as $name) {
-    install_taxonomy_add_term($release_type_vid, $name);
+    $term_tid = install_taxonomy_add_term($release_type_vid, $name);
+    if ($name == t('Security update')) {
+      // This variable is a stop-gap until #642110 is implemented properly.
+      variable_set('project_release_security_update_tid', $term_tid);
+    }
     $context['results'][] = t('Created release type %term.', array('%term' => $name));
   }
 
