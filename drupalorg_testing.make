@@ -61,7 +61,7 @@ projects[path_redirect][download][type] = "git"
 projects[path_redirect][download][revision] = "6.x-1.x"
 
 projects[project][download][type] = "git"
-projects[project][download][revision] = "master"
+projects[project][download][revision] = "6.x-1.x"
 
 projects[project_git_instructions][download][type] = "git"
 projects[project_git_instructions][download][revision] = "6.x-1.x"
