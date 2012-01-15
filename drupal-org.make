@@ -22,7 +22,6 @@ projects[comment_alter_taxonomy] = 1.0
 projects[simpletest] = 2.11
 
 ; Testing new functionality.
-libraries[glip][download][type] = "git"
-libraries[glip][download][url] = "https://github.com/halstead/glip"
-libraries[glip][download][tag] = "1.0"
-libraries[glip][directory_name] = "glip"
+libraries[jquery_ui][download][type] = "file"
+libraries[jquery_ui][download][url] = "http://jquery-ui.googlecode.com/files/jquery.ui-1.6.zip"
+libraries[jquery_ui][directory_name] = "jquery.ui"
