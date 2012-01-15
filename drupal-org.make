@@ -1,4 +1,5 @@
-; $Id$
+; drush make API version
+api = 2
 
 ; make file for drupalorg_testing profile
 core = 6.22
