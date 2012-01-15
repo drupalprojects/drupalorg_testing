@@ -22,11 +22,6 @@ projects[comment_alter_taxonomy] = 1.0
 projects[simpletest] = 2.11
 
 ; Testing new functionality.
-libraries[jquery_ui][download][type] = "git"
-libraries[jquery_ui][download][url] = "https://github.com/jquery/jquery-ui"
-libraries[jquery_ui][download][tag] = "1.6"
-libraries[jquery_ui][directory_name] = "jquery.ui"
-
 libraries[glip][download][type] = "git"
 libraries[glip][download][url] = "https://github.com/halstead/glip"
 libraries[glip][download][tag] = "1.0"
