@@ -118,6 +118,8 @@ projects[git_deploy][download][revision] = "6.x-1.x"
 
 projects[libraries][download][type] = "git"
 projects[libraries][download][revision] = "6.x-1.x"
+; Allow libraries to be found during installation.
+projects[libraries][patch][1215376] = http://drupal.org/files/issues/libraries.install.1.patch
 
 ; External libraries.
 
@@ -142,4 +144,3 @@ libraries[glip][download][type] = "git"
 libraries[glip][download][url] = "https://github.com/halstead/glip"
 libraries[glip][download][tag] = "1.0"
 libraries[glip][directory_name] = "glip"
-
