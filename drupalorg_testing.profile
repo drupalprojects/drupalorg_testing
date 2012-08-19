@@ -101,7 +101,7 @@ function drupalorg_testing_profile_modules() {
     'project_git_instructions',
 
     // Repository authentication-related modules.
-    'sshkey', 'multiple_email', /* @todo 'versioncontrol_git_repo_manager' */, 'drupal_queue', 'waiting_queue',
+    'sshkey', 'multiple_email', /* @todo 'versioncontrol_git_repo_manager',*/ 'drupal_queue', 'waiting_queue',
 
     // Custom modules.
     'drupalorg', 'drupalorg_crosssite', 'drupalorg_git_gateway', 'drupalorg_project',
