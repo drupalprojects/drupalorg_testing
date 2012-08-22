@@ -40,7 +40,7 @@ projects[drupalorg][download][type] = "git"
 projects[drupalorg][download][revision] = "6.x-3.x"
 
 projects[drupalorg_crosssite][download][type] = "git"
-projects[drupalorg_crosssite][revision] = "6.x-3.x"
+projects[drupalorg_crosssite][download][revision] = "6.x-3.x"
 
 projects[google_admanager][download][type] = "git"
 projects[google_admanager][download][revision] = "6.x-2.x"
